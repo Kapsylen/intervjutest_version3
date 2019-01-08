@@ -49,7 +49,7 @@ public class CityService {
         return cityJpaRep.findAllByCountry_Region(region);
     }
 
-
+    @Transactional
     public City addCity(City city) {
         return cityJpaRep.save(city);
     }
