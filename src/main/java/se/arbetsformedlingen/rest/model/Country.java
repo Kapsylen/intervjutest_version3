@@ -1,6 +1,9 @@
 package se.arbetsformedlingen.rest.model;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity(name = "Country")
@@ -8,14 +11,15 @@ import javax.validation.constraints.Size;
 public class Country {
 
     @Id
+    @NotNull
     @Column(name = "Code")
-    @Size(min = 3, max = 3)
+    @Size(min = 3, max = 3, message = "Country code have to be precise three character long")
     private String code;
-    @Column(name="Name")
+    @Column(name="Name", length = 52)
     private String name;
     @Column(name = "Continent")
     private String continent;
-    @Column(name="Region")
+    @Column(name="Region", length = 26)
     private String region;
     @Column(name="SurfaceArea")
     private Integer surfaceArea;
@@ -29,11 +33,11 @@ public class Country {
     private Integer gnp;
     @Column(name="GNPOld", nullable=true)
     private Integer gnpOld;
-    @Column(name="LocalName")
+    @Column(name="LocalName", length = 45)
     private String localName;
-    @Column(name="GovernmentForm")
+    @Column(name="GovernmentForm", length = 45)
     private String governmentForm;
-    @Column(name="HeadOfState")
+    @Column(name="HeadOfState", length = 60)
     private String headOfState;
     @Column(name = "Capital")
     private Integer capital;

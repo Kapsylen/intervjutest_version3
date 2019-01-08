@@ -71,12 +71,6 @@ public class CountryService {
         return countryJpaRep.findAllCitiesInAContinentWithAPopulationEqualOrGreaterThanX(continent, population);
     }
 
-    public Country findByCode(String code) {
-
-        return countryJpaRep.findByCode(code);
-
-    }
-
 
     public boolean existsCountry(String code) {
         return countryJpaRep.existsByCode(code);

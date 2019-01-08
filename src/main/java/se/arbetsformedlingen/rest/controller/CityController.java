@@ -22,7 +22,7 @@ public class CityController {
     CityService cityService;
 
 
-    @GetMapping(value = "/find/{name}", produces = { "application/json", "application/xml" })
+    @GetMapping(value = "/find/{name}")
     @ResponseBody
     public ResponseEntity city(@PathVariable(value = "name", required = true) String name){
         return ResponseEntity.ok().body(cityService.findCity(name));

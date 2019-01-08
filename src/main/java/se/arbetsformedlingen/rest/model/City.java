@@ -1,18 +1,21 @@
 package se.arbetsformedlingen.rest.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @Entity(name="City")
 @Table(name="city")
 public class City {
 
     @Id
+    @Size(max = 11)
     @Column(name="ID")
     Integer id;
-    @Column(name="Name")
+    @Column(name="Name", length = 35)
     String name;
-    @Column(name="District")
+    @Column(name="District", length = 20)
     String district;
+    @Size(max = 11)
     @Column(name="Population")
     Integer population;
     @ManyToOne()

@@ -7,6 +7,7 @@ import javax.persistence.*;
 public class CountryLanguage {
 
     @Id
+    @Column(name="Language", length = 30)
     private String language;
     @Column(name = "IsOfficial")
     private Character isOfficial;
